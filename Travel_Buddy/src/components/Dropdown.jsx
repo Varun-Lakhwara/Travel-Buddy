@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function Journal() {
+export default function Dropdown() {
   return (
     <div>
-      Journal
+      
     </div>
   )
 }
