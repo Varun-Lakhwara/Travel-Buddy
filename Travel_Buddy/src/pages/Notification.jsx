@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function EditJournal() {
+export default function Notification() {
   return (
     <div>
-      Edit Journal
+      Notification
     </div>
   )
 }
