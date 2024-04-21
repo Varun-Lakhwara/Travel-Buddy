@@ -44,7 +44,7 @@ export default function NavBar() {
           type="text"
           placeholder="Search.."
           rightIcon={AiOutlineSearch}
-          className="hidden lg:inline"
+          className="hidden lg:inline float-right"
         />
       </form>
 
