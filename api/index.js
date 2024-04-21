@@ -1,7 +1,8 @@
 let express = require("express");
 let mongo = require("mongoose");
 let dotenv = require("dotenv");
-let router = require ('./routes/user.route.js');
+let userRouter = require ('./routes/user.route.js');
+let authRouter = require ('./routes/auth.route.js');
 
 dotenv.config();
 
@@ -15,9 +16,11 @@ mongo
   });
 
 const app = express();
+app.use(express.json());
 
 app.listen(3000, () => {
   console.log("Server is running on port 3000.");
 });
 
-app.use("/api/user", router);
+app.use("/api/user", userRouter);
+app.use("/api/auth", authRouter);
