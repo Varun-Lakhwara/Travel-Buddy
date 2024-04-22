@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import {Label, TextInput, Button, Alert, Spinner} from 'flowbite-react';
+import OAuth from '../components/OAuth';
 
 export default function SignUp() {
 
@@ -99,6 +100,7 @@ export default function SignUp() {
               </>
             ): 'Sign Up'
               }</Button>
+              <OAuth/>
 
             </form>
             
