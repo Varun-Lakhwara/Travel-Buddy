@@ -1,28 +1,28 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import {Label, TextInput, Button, Alert, Spinner} from 'flowbite-react';
+import { signInStart, signInSuccess, signInFailure } from '../redux/user/userSlice'; 
 
 export default function SignIn() {
 
   const [formData,setFormData] = useState({});
-  const [errorMessage,setErrorMessage] = useState(null);
-  const [loading,setLoading] = useState(false);
+  const {loading, error: errorMessage} = useSelector(state => state.user);
+
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleChange = (e) =>{
-    setFormData({...formData, [e.target.id] : e.target.value.trim() });
+    setFormData({...formData, [e.target.id] : e.target.value.trim()});
   };
 
   const handleSubmit = async (e) =>{
     e.preventDefault();
     if( !formData.email || !formData.password ){
-      return setErrorMessage("Please fill out all fields.");
+      return dispatch(signInFailure("Please fill out all fields."));
     }
-
     try{
-      setLoading(true);
-      setErrorMessage(null);
-
+      dispatch(signInStart());
       const res = await fetch('/api/auth/Signin',{
         method : 'POST',
         headers: { 'content-type': 'application/json'},
@@ -31,17 +31,17 @@ export default function SignIn() {
 
       const data = await res.json();
       if (data.success === false){
-        return setErrorMessage(data.message);
+        dispatch(signInFailure(data.message));
       }
-      setLoading(false);
+     
       if(res.ok){
+        dispatch(signInSuccess(data));
         navigate('/');
       }
 
     }
     catch(error){
-      setErrorMessage(error.message);
-      setLoading(false);
+      dispatch(signInFailure(error.message));
     }
   }
 
@@ -54,7 +54,7 @@ export default function SignIn() {
         <Link to="/" className="font-bold text-5xl ">
         <span className='px-2 py-2 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-lg text-white'>Travel </span>Buddy
          </Link>
-         <p className='text-sm mt-5 font-semibold'> Make your Travel Experience Exceptional.</p>
+         <p className='text-sm mt-5 font-semibold'> Make Your Travel Experience Exceptional.</p>
           </div>
 
           {/* Right */}
@@ -79,7 +79,8 @@ export default function SignIn() {
                 placeholder='*********'
                 id='password'
                 onChange={handleChange}
-                required/>
+                required
+                />
               </div>
 
               <Button gradientMonochrome='teal' type='submit' disabled={loading}>{
