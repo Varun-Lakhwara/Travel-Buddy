@@ -8,9 +8,10 @@ export default function SignIn() {
 
   const [formData,setFormData] = useState({});
   const {loading, error: errorMessage} = useSelector(state => state.user);
+  const dispatch = useDispatch();
 
   const navigate = useNavigate();
-  const dispatch = useDispatch();
+  
 
   const handleChange = (e) =>{
     setFormData({...formData, [e.target.id] : e.target.value.trim()});
@@ -31,7 +32,7 @@ export default function SignIn() {
 
       const data = await res.json();
       if (data.success === false){
-        dispatch(signInFailure(data.message));
+        return dispatch(signInFailure(data.message));
       }
      
       if(res.ok){
