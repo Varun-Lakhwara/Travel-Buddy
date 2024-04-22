@@ -51,10 +51,10 @@ export default function SignUp() {
       <div className='flex p-3 max-w-3xl mx-auto flex-col md:flex-row md:items-center gap-10'>
         {/* Left */}
         <div className='flex-1'>
-        <Link to="/" className="font-bold text-4xl ">
+        <Link to="/" className="font-bold text-5xl ">
         <span className='px-2 py-2 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-lg text-white'>Travel </span>Buddy
          </Link>
-         <p className='text-sm mt-5'> Make your Travel Experience Exceptional.</p>
+         <p className='text-sm mt-5 font-semibold'> Make your Travel Experience Exceptional.</p>
           </div>
 
           {/* Right */}

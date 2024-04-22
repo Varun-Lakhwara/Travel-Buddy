@@ -10,6 +10,9 @@ import NavBar from './components/NavBar';
 import CreateJournal from './pages/CreateJournal';
 import EditJournal from './pages/EditJournal';
 import Map from './pages/Maps';
+import Footer from './components/Footer';
+import About from './pages/About';
+import Contact from './pages/Contact';
 
 function App() {
 
@@ -25,7 +28,11 @@ function App() {
     <Route path='/CreateJournal' element={<CreateJournal/>}/>
     <Route path='/EditJournal' element={<EditJournal/>}/>
     <Route path='/Map' element={<Map/>}/>
+    <Route path='/About' element={<About/>}/>
+    <Route path='/contact' element={<Contact/>}/>
    </Routes>
+   <Footer/>
+   
    </BrowserRouter>
   )
 }

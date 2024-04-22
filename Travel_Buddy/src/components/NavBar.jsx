@@ -34,7 +34,7 @@ export default function NavBar() {
   return (
     <Navbar className="border-b-2 navbar flex">
       {/* Logo */}
-      <Link to="/" className="navbar-logo">
+      <Link to="/" className="navbar-logo px-2 py-1 sm:text-xl">
         Travel Buddy
       </Link>
 
