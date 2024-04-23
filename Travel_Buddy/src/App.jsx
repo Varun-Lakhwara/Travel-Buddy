@@ -13,6 +13,7 @@ import Map from './pages/Maps';
 import Footer from './components/Footer';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import PrivateRoute from './components/PrivateRoute';
 
 function App() {
 
@@ -24,7 +25,9 @@ function App() {
     <Route path='/Notification' element={<Notification/>}/>
     <Route path='/SignIn' element={<SignIn/>}/>
     <Route path='/SignUp' element={<SignUp/>}/>
-    <Route path='/Dashboard' element={<Dashboard/>}/>
+    <Route element={<PrivateRoute/>}>
+      <Route path='/Dashboard' element={<Dashboard/>}/>
+    </Route> 
     <Route path='/CreateJournal' element={<CreateJournal/>}/>
     <Route path='/EditJournal' element={<EditJournal/>}/>
     <Route path='/Map' element={<Map/>}/>
