@@ -141,7 +141,7 @@ export default function DashProfile() {
       const res = await fetch(`/api/user/delete/${currentUser._id}`, {
         method: "DELETE",
       });
-      const date = await res.json();
+      const data = await (res.json());
       if (!res.ok) {
         dispatch(deleteUserFailure(data.message));
       } else {
