@@ -150,5 +150,5 @@ export default function NavBar() {
         </ul>
       </div>
     </Navbar>
-  );
+  )
 }

@@ -73,7 +73,6 @@ const signin = async (req, res, next) => {
 
 const google = async ( req, res, next) =>{
   const { name, email, googlePhotoUrl } = req.body;
-  console.log(req.body);
 
   try{
     const user = await User.findOne({email});
