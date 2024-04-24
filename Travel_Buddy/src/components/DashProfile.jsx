@@ -15,7 +15,7 @@ export default function DashProfile() {
   const [imageFileUploadError, setImageFileUploadError] = useState(null);
   
   const handleImageChange = (e) => {
-    const file = e.target.files[0];
+    const file = (e.target.files[0]);
     if (file) {
       setImageFile(file);
       setImageFileUrl(URL.createObjectURL(file));
@@ -73,8 +73,8 @@ export default function DashProfile() {
           ref={filePickerRef}
           hidden
         ></input>
-        <div className="relative w-30 h-30 self-center cursor-pointer shadow-md overflow-hidden rounded-full " onClick={() => filePickerRef.current.click()}>
-           
+
+        <div className="relative w-32 h-32 self-center cursor-pointer shadow-md overflow-hidden rounded-full " onClick={() => filePickerRef.current.click()}>
           {imageFileUploadProgress && (
             <CircularProgressbar value={imageFileUploadProgress || 0} text={`${imageFileUploadProgress}%`} strokeWidth={5} 
             styles={{

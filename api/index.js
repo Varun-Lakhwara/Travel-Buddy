@@ -1,8 +1,9 @@
-let express = require("express");
-let mongo = require("mongoose");
-let dotenv = require("dotenv");
-let userRouter = require("./routes/user.route.js");
-let authRouter = require("./routes/auth.route.js");
+const express = require("express");
+const mongo = require("mongoose");
+const dotenv = require("dotenv");
+const userRouter = require("./routes/user.route.js");
+const authRouter = require("./routes/auth.route.js");
+const cookieParser = require("cookie-parser");
 
 dotenv.config();
 
@@ -17,6 +18,7 @@ mongo
 
 const app = express();
 app.use(express.json());
+app.use(cookieParser());
 
 app.listen(3000, () => {
   console.log("Server is running on port 3000.");
