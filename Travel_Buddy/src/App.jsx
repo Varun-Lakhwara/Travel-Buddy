@@ -14,6 +14,7 @@ import Footer from './components/Footer';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import PrivateRoute from './components/PrivateRoute';
+import OnlyAdminPrivateRoute from './components/OnlyAdminPrivateRoute';
 
 function App() {
 
@@ -28,7 +29,9 @@ function App() {
     <Route element={<PrivateRoute/>}>
       <Route path='/Dashboard' element={<Dashboard/>}/>
     </Route> 
-    <Route path='/CreateJournal' element={<CreateJournal/>}/>
+    <Route element={<OnlyAdminPrivateRoute/>}>
+      <Route path='/CreateJournal' element={<CreateJournal/>}/>
+    </Route> 
     <Route path='/EditJournal' element={<EditJournal/>}/>
     <Route path='/Map' element={<Map/>}/>
     <Route path='/About' element={<About/>}/>

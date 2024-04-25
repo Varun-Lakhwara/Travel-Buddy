@@ -24,7 +24,7 @@ export default function NavBar() {
     console.log(error);
   }
   }
-);
+  );
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
@@ -46,14 +46,12 @@ export default function NavBar() {
   };
 
   return (
-    <Navbar className="border-b-2 navbar flex">
-      <div>
+      <Navbar className="border-b-2 navbar flex">
       {/* Logo */}
       <Link to="/" className="navbar-logo px-2 py-1 sm:text-xl">
         Travel Buddy
-      </Link></div>
+      </Link>
 
-      <div>
       {/* Search bar */}
       <form>
         <TextInput
@@ -66,11 +64,11 @@ export default function NavBar() {
 
        {/* Search button for mobile */}
        <Button
-        className="rounded-full px-6 py-2 lg:hidden"
+        className="px-6 py-2 lg:hidden"
         color="#0e2f44"
         icon={<AiOutlineSearch />}
+        pill
       ></Button>
-      </div>
      
       {/* Light/Dark button */}
       <div className="flex gap-2 md:order-2">
