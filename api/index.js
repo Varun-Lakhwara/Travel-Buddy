@@ -1,8 +1,9 @@
 const express = require("express");
 const mongo = require("mongoose");
 const dotenv = require("dotenv");
-const userRouter = require("./routes/user.route.js");
-const authRouter = require("./routes/auth.route.js");
+const userRoutes = require("./routes/user.route.js");
+const authRoutes = require("./routes/auth.route.js");
+const postRoutes = require("./routes/post.route.js")
 const cookieParser = require("cookie-parser");
 
 dotenv.config();
@@ -24,8 +25,9 @@ app.listen(3000, () => {
   console.log("Server is running on port 3000.");
 });
 
-app.use("/api/user", userRouter);
-app.use("/api/auth", authRouter);
+app.use("/api/user", userRoutes);
+app.use("/api/auth", authRoutes);
+app.use("/api/post", postRoutes);
 
 app.use((err, req, res, next) => {
     const statusCode = err.statusCode || 500;
@@ -33,6 +35,6 @@ app.use((err, req, res, next) => {
     res.status(statusCode).json({
         success : false,
         statusCode,
-        message
+        message,
     });
 });
