@@ -17,7 +17,7 @@ import {
 import { app } from "../firebase.js";
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
-import useNavigate from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 
 export default function CreateJournal() {
   const [file, setFile] = useState(null);
