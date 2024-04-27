@@ -1,7 +1,7 @@
 const errorHandler = require("../utils/error");
 const Post = require("../models/post.model.js"); 
 
-const create = async (req,res,next) =>{
+const createjournal = async (req,res,next) =>{
  if(!req.user.isAdmin){
     return next(errorHandler(403, 'You are not allowed to create a post'));
  }   
@@ -24,4 +24,4 @@ const create = async (req,res,next) =>{
      }
 };
 
-module.exports = create;
+module.exports = createjournal;
