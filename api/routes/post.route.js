@@ -6,7 +6,7 @@ const getposts = require('../controllers/post.controller.js');
 const router = express.Router();
 
 router.post('/createjournal', verifyToken, createjournal);
-router.get('/getpost',getposts)
+router.get('/getpost',getposts);
 
 module.exports = router;
 
