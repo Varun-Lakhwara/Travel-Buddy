@@ -15,7 +15,7 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import PrivateRoute from './components/PrivateRoute';
 import OnlyAdminPrivateRoute from './components/OnlyAdminPrivateRoute';
-import DashPost from './components/DashPost';
+
 
 function App() {
 
@@ -32,12 +32,11 @@ function App() {
     </Route> 
     <Route element={<OnlyAdminPrivateRoute/>}>
       <Route path='/CreateJournal' element={<CreateJournal/>}/>
+      <Route path='/EditJournal/:postId' element={<EditJournal/>}/>
     </Route> 
-    <Route path='/EditJournal' element={<EditJournal/>}/>
     <Route path='/Map' element={<Map/>}/>
     <Route path='/About' element={<About/>}/>
     <Route path='/contact' element={<Contact/>}/>
-    <Route path='DashPost' element={<DashPost/>}/>
    </Routes>
    <Footer/>
    
