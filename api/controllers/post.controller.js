@@ -66,6 +66,19 @@ const getposts = async ( req, res, next ) => {
    } catch (error) {
       next(error);
    }
-}
+};
+
+const deletepost = async(req, res, next) => {
+   if(!req.user.isAdmin || req.user.id !== req.params.userId){
+      return next(errorHandler(403, 'Ypu are not allowed to delete this post'));
+   }
+   try {
+      await Post.findByIdAndDelete(req.params.postId);
+      res.status(200).json('The post has been deleted');
+   } catch (error) {
+      next(eror);
+   }
+};
 
 module.exports = createjournal;
+module.exports = deletepost;
