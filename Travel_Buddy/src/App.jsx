@@ -16,6 +16,7 @@ import Contact from './pages/Contact';
 import PostPage from './pages/PostPage';
 import PrivateRoute from './components/PrivateRoute';
 import OnlyAdminPrivateRoute from './components/OnlyAdminPrivateRoute';
+import ScrollToTop from './components/ScrollToTop';
 
 
 
@@ -23,6 +24,7 @@ function App() {
 
   return (
    <BrowserRouter>
+   <ScrollToTop/>
    <NavBar/>
    <Routes>
     <Route path='/' element={<Home/>}/>

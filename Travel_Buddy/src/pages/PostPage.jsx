@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { Button, Spinner } from "flowbite-react";
 import { Link } from 'react-router-dom';
-
+import CommentSection from "../components/CommentSection";
 
 export default function PostPage() {
   const { postSlug } = useParams();
@@ -49,6 +49,11 @@ export default function PostPage() {
             <span className="italic">{post && new Date(post.content.length / 1000).toFixed(0)} mins read</span>
         </div>
         <div className="p-3 max-w-2xl mx-auto w-full post-content" dangerouslySetInnerHTML={{__html: post && post.content}}></div>
+        
+        <CommentSection postId={post}/>
+        {/* <CommentSection postId={post._id}/> */}
+    
+        
     </main>
   );
 }
