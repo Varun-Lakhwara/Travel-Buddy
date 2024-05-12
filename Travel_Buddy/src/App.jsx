@@ -13,8 +13,10 @@ import Map from './pages/Maps';
 import Footer from './components/Footer';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import PostPage from './pages/PostPage';
 import PrivateRoute from './components/PrivateRoute';
 import OnlyAdminPrivateRoute from './components/OnlyAdminPrivateRoute';
+
 
 
 function App() {
@@ -36,7 +38,9 @@ function App() {
     </Route> 
     <Route path='/Map' element={<Map/>}/>
     <Route path='/About' element={<About/>}/>
-    <Route path='/contact' element={<Contact/>}/>
+    <Route path='/Contact' element={<Contact/>}/>
+    <Route path='/post' element={<PostPage/>}/>
+    {/* <Route path='/post/:postSlug' element={<PostPage/>}/> */}
    </Routes>
    <Footer/>
    
