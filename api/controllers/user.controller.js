@@ -122,8 +122,22 @@ const getUsers = async( req, res, next ) => {
    }
 };
 
+const getUser = async( req, res, next ) => {
+  try {
+    const user = await User.findById(req.params.id);
+    if(!user){
+      return next(errorHandler(404, 'User not found'))
+    }
+    const {password, ...rest} = user._doc;
+    res.status(200).json(rest);
+  }catch(error){
+    next(error);
+  }
+};
+ 
 module.exports = test;
 module.exports = updateUser;
 module.exports = deleteUser;
 module.exports = signout;
 module.exports = getUsers;
+module.exports = getUser;
