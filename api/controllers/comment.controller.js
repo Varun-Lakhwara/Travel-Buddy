@@ -8,7 +8,7 @@ const createComment = async(req,res,next) => {
             return next(errorHandler(403, 'You are not allowed to create this comment'));
         }
 
-        const newComment = new Commnet({
+        const newComment = new Comment({
             content,
             postId,
             userId,

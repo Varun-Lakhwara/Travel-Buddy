@@ -17,6 +17,7 @@ import PostPage from './pages/PostPage';
 import PrivateRoute from './components/PrivateRoute';
 import OnlyAdminPrivateRoute from './components/OnlyAdminPrivateRoute';
 import ScrollToTop from './components/ScrollToTop';
+import WeatherWidget from './pages/WeatherWidget';
 
 
 
@@ -43,6 +44,7 @@ function App() {
     <Route path='/Contact' element={<Contact/>}/>
     <Route path='/post' element={<PostPage/>}/>
     {/* <Route path='/post/:postSlug' element={<PostPage/>}/> */}
+    <Route path='/WeatherWidget' element={<WeatherWidget/>}/>
    </Routes>
    <Footer/>
    
