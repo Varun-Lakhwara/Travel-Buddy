@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import PostCard from "../components/PostCard";
 import ContactForm from "../components/ContactForm";
+import About from "./About";
 
 export default function Home() {
   const [posts, setPosts] = useState([]);
@@ -50,11 +51,20 @@ export default function Home() {
           </div>
         )}
       </div>
-      <div className="p-5  h-screen flex items-end justify-center gap-3   ">
-        <div className="border border-4 border-teal-500 rounded-2xl !rounded-tr-none !rounded-bl-none p-10 bg-slate-800">
+        <div className="">
+        <div className="">
+       <div className="bg-custom-color p-10 border-8 border-new-color rounded-2xl !rounded-tr-none !rounded-bl-none">
+              <About/>
+          </div>
+       </div>
+          
+      <div className="p-5 h-screen flex items-end justify-center gap-3 dark:bg-slate-700">
+        <div className="border-4 border-teal-500 rounded-2xl !rounded-tr-none !rounded-bl-none p-10 bg-slate-800">
         <ContactForm/>
         </div>
       </div>
+      
+        </div>
       
     </div>
     

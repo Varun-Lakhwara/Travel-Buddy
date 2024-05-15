@@ -7,7 +7,13 @@ export default {
     flowbite.content(),
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'custom-color': '#b3cde0',
+        'new-color' : '#6497b1',
+        'cust-color' : '#dfe3ee',
+      }
+    },
   },
   plugins: [require('flowbite/plugin'),  require('tailwind-scrollbar')],
 }

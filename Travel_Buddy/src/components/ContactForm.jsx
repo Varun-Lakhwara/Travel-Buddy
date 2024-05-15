@@ -58,7 +58,7 @@ export default function ContactForm() {
         <div className="container mx-auto px-4">
           <div className="flex justify-center">
             <div className="w-full max-w-3xl text-center mb-8">
-              <h3 className="text-4xl font-bold">Let's Connect</h3>
+              <h3 className="text-4xl font-bold text-white">Let's Connect</h3>
             </div>
           </div>
           <div className="flex justify-center">
