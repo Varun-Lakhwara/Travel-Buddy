@@ -9,7 +9,7 @@ export default function FooterComp() {
       <div className="w-full max-w-7xl mx-auto">
         <div className="grid w-full justify-between sm:flex md:grid-cols-1">
           <div className="mt-5">
-            <Link to="/" className="font-bold text-4xl ">
+            <Link to="/" className="font-bold text-4xl whitespace-nowrap ">
               <span className="px-2 py-2 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-lg text-white">
                 Travel{" "}
               </span>

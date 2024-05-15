@@ -2,10 +2,10 @@ import React from 'react'
 
 export default function About() {
   return (
-    <div className='min-h-screen flex items-center justify-center bg-cust-color'>
+    <div className='min-h-screen flex items-center justify-center'>
       <div className='max-w-2xl mx-auto p-3 text-center'>
         <div className="">
-          <h1 className='text-3xl text-center font-semibold my-7 text-new-color'>About Travel Buddy</h1>
+          <h1 className='text-3xl text-center font-semibold my-7 text-teal-500'>About Travel Buddy</h1>
         </div>
         <div className="text-md text-gray-500 flex flex-col gap-6">
           <p>

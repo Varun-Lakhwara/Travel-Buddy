@@ -102,8 +102,7 @@ const updatepost= async(req, res, next) => {
    }
 };
 
-
-
 module.exports = createjournal;
 module.exports = deletepost;
+module.exports = getposts;
 module.exports = updatepost;

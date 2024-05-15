@@ -142,7 +142,7 @@ export default function DashProfile() {
       const res = await fetch(`/api/user/delete/${currentUser._id}`, {
         method: "DELETE",
       });
-      const data = await (res.json());
+      const data = await res.json();
       if (!res.ok) {
         dispatch(deleteUserFailure(data.message));
       } else {
@@ -158,6 +158,7 @@ export default function DashProfile() {
       const res = await fetch('/api/user/signout',{
         method: 'POST',
       });
+      const data = await res.json();
       if(!res.ok){
         console.log(data.message);
       }
@@ -257,7 +258,9 @@ export default function DashProfile() {
         <span onClick={() => setShowModal(true)} className="cursor-pointer">
           Delete Account
         </span>
+
         <span onClick={handleSignout} className="cursor-pointer">Sign Out</span>
+        
       </div>
       {updateUserSuccess && (
         <Alert color="success" className="mt-5">

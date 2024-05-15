@@ -73,3 +73,9 @@ body{
 .dark .post-content a{
   color: red;
 }
+
+.custom-dropdown {
+  background: none;
+  border: none;
+  color: inherit;
+}
