@@ -63,7 +63,7 @@ export default function ContactForm() {
           </div>
           <div className="flex justify-center">
             <div className="w-full max-w-xl mx-auto">
-              <form method="POST" className="space-y-6">
+              <form className="space-y-6">
                 <input
                   type="hidden"
                   name="email"
@@ -79,13 +79,13 @@ export default function ContactForm() {
                   </div>
                 </div>
                 <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-                  <div className="form-group">
+                  <div className="form-group ">
                     <input
                       type="text"
                       name="name"
                       placeholder="Name"
                       data-form-field="name"
-                      className=" w-full p-3 border rounded text-gray-500 dark:text-white dark:bg-slate-800"
+                      className=" w-full  mx-auto p-3 border rounded text-gray-500 dark:text-white dark:bg-slate-800 g"
                       value={formData.name}
                       onChange={handleChange}
                       id="name-form02-0"
@@ -97,7 +97,7 @@ export default function ContactForm() {
                       name="email"
                       placeholder="Email"
                       data-form-field="email"
-                      className=" w-full p-3 border rounded text-gray-500 dark:text-white dark:bg-slate-800"
+                      className=" w-full p-3 border rounded text-gray-500 dark:text-white dark:bg-slate-800 "
                       value={formData.email}
                       onChange={handleChange}
                       id="email-form02-0"
@@ -109,7 +109,7 @@ export default function ContactForm() {
                       name="phone"
                       placeholder="Phone"
                       data-form-field="phone"
-                      className=" w-full p-3 border rounded  text-gray-500 dark:text-white dark:bg-slate-800"
+                      className=" w-full p-3 border rounded  text-gray-500 dark:text-white dark:bg-slate-800 "
                       value={formData.phone}
                       onChange={handleChange}
                     />
@@ -119,7 +119,7 @@ export default function ContactForm() {
                       name="textarea"
                       placeholder="Message"
                       data-form-field="textarea"
-                      className=" w-full p-3 border rounded text-gray-500 dark:text-white dark:bg-slate-800"
+                      className=" w-full p-3 border rounded text-gray-500 dark:text-white dark:bg-slate-800 "
                       onChange={handleChange}
                     ></textarea>
                   </div>

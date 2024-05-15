@@ -26,7 +26,7 @@ export default function Home() {
           Welcome to TravelBuddy
         </h1>
         <Link
-          to="/search"
+          to="/Search"
           className="text-xs sm:text-sm text-teal-500 font-bold hover:underline"
         >
           View all posts{" "}
@@ -42,7 +42,7 @@ export default function Home() {
               })}
             </div>
             <Link
-              to="/search"
+              to="/Search"
               className="text-lg text-teal-500 hover:underline text-center"
             >
               View all posts
@@ -50,8 +50,8 @@ export default function Home() {
           </div>
         )}
       </div>
-      <div className="p-5 dark:bg-slate-800 ">
-        <div className="border border-teal-700 rounded-lg">
+      <div className="p-5  h-screen flex items-end justify-center gap-3   ">
+        <div className="border border-4 border-teal-500 rounded-2xl !rounded-tr-none !rounded-bl-none p-10 bg-slate-800">
         <ContactForm/>
         </div>
       </div>

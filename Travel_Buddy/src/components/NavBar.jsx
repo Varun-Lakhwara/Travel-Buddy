@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Navbar, TextInput } from "flowbite-react";
 import { AiOutlineSearch } from "react-icons/ai";
 import { FaMoon, FaSun } from "react-icons/fa";
@@ -14,17 +14,22 @@ export default function NavBar() {
   const [click, setClick] = useState(false);
   const dispatch = useDispatch();
   const [dropdown, setDropdown] = useState(false);
-  const { theme } = useSelector((state) =>  {
-    try
-    {
-      console.log(state.theme.theme); // Check the structure of your state here
-      return state.theme.theme;
+  const { theme } = useSelector((state) => state.theme);
+  const [ searchTerm, setSearchTerm ] = useState('');
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  console.log(searchTerm);
+
+  useEffect(() => {
+    const urlParams = new URLSearchParams(location.search);
+    const searchTermFromUrl = urlParams.get('searchTerm');
+    if(searchTermFromUrl){
+      setSearchTerm(searchTermFromUrl);
     }
-  catch(error){
-    console.log(error);
-  }
-  }
-  );
+  },[location.search]
+)
+
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
@@ -45,6 +50,14 @@ export default function NavBar() {
     }
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const urlParams = new URLSearchParams(location.search);
+    urlParams.set('searchTerm', searchTerm);
+    const searchQuery = urlParams.toString();
+    navigate(`/Search?${searchQuery}`);
+  }
+
   return (
       <Navbar className="border-b-2 navbar flex">
       {/* Logo */}
@@ -53,12 +66,14 @@ export default function NavBar() {
       </Link>
 
       {/* Search bar */}
-      <form>
+      <form onSubmit={handleSubmit}>
         <TextInput
           type="text"
           placeholder="Search.."
           rightIcon={AiOutlineSearch}
           className="hidden lg:inline float-right"
+          value={searchTerm}
+          onChange={(e) => setsearchTerm(e.target.value)}
         />
       </form>
 

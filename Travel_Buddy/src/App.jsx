@@ -17,9 +17,7 @@ import PostPage from './pages/PostPage';
 import PrivateRoute from './components/PrivateRoute';
 import OnlyAdminPrivateRoute from './components/OnlyAdminPrivateRoute';
 import ScrollToTop from './components/ScrollToTop';
-import WeatherWidget from './pages/WeatherWidget';
-
-
+import Search from './pages/Search';
 
 function App() {
 
@@ -44,7 +42,7 @@ function App() {
     <Route path='/Contact' element={<Contact/>}/>
     <Route path='/post' element={<PostPage/>}/>
     {/* <Route path='/post/:postSlug' element={<PostPage/>}/> */}
-    <Route path='/WeatherWidget' element={<WeatherWidget/>}/>
+    <Route path='/Search' element={<Search/>}/>
    </Routes>
    <Footer/>
    
