@@ -136,8 +136,9 @@ const getUser = async( req, res, next ) => {
 };
  
 module.exports = test;
-module.exports = updateUser;
-module.exports = deleteUser;
-module.exports = signout;
-module.exports = getUsers;
-module.exports = getUser;
+module.exports= updateUser;
+module.exports= deleteUser;
+module.exports= signout;
+module.exports= getUsers;
+module.exports= getUser;
+

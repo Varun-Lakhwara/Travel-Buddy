@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import PostCard from "../components/PostCard";
 import ContactForm from "../components/ContactForm";
 import About from "./About";
+import ShareButton from "../components/ShareButton";
 
 export default function Home() {
   const [posts, setPosts] = useState([]);
@@ -51,9 +52,12 @@ export default function Home() {
           </div>
         )}
       </div>
+
+      <ShareButton/>
+
         <div className="">
-        <div className="">
-       <div className="bg-custom-color p-10 border-8 border-new-color rounded-2xl !rounded-tr-none !rounded-bl-none">
+        <div>
+       <div className="bg-custom-color p-10 border-8 border-new-color rounded-2xl !rounded-tr-none !rounded-bl-none dark:bg-gray-800">
               <About/>
           </div>
        </div>

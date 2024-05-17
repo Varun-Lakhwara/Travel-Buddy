@@ -118,9 +118,9 @@ const getComment = async( req,res,next ) => {
 
 }
 
-module.exports = createComment;
-module.exports = getPostComments;
-module.exports = likeComment;
-module.exports = editComment;
-module.exports = deleteComment;
-module.exports = getComment;
+module.exports= createComment;
+module.exports= getPostComments
+module.exports= likeComment;
+module.exports= editComment;
+module.exports= deleteComment;
+module.exports= getComment;

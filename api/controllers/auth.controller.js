@@ -62,7 +62,7 @@ const signin = async (req, res, next) => {
 
     res
       .status(200)
-      .cookie("access_token", token, {
+      .cookie('access_token', token, {
         httpOnly: true,
       })
       .json(rest);
@@ -80,7 +80,7 @@ const google = async ( req, res, next) =>{
     if(user){
       const token = jwt.sign({ id : user._id, isAdmin : user.isAdmin }, process.env.JWT_SECRET);
       const { password, ...rest} = user._doc;
-      res.status(200).cookie("access_token",token,{
+      res.status(200).cookie('access_token',token,{
         httpOnly: true,
       })
       .json(rest);
@@ -113,6 +113,7 @@ const google = async ( req, res, next) =>{
   }
 };
 
-module.exports = signup;
-module.exports = signin;
-module.exports = google;
+module.exports=signup;
+module.exports=signin;
+module.exports=google;
+

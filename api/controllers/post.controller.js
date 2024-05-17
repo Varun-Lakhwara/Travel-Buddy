@@ -69,19 +69,19 @@ const getposts = async ( req, res, next ) => {
 };
 
 const deletepost = async(req, res, next) => {
-   if(!req.user.isAdmin || req.user.id !== req.params.userId){
+   if(!req.user || !req.user.isAdmin || req.user.id !== req.params.userId){
       return next(errorHandler(403, 'You are not allowed to delete this post'));
    }
    try {
       await Post.findByIdAndDelete(req.params.postId);
       res.status(200).json('The post has been deleted');
    } catch (error) {
-      next(eror);
+      next(error);
    }
 };
 
 const updatepost= async(req, res, next) => {
-   if(!req.user.isAdmin || req.user.id !== req.params.userId){
+   if(!req.user || !req.user.isAdmin || req.user.id !== req.params.userId){
       return next(errorHandler(403, 'You are not allowed to update this post'));
    }
    try {
@@ -98,11 +98,12 @@ const updatepost= async(req, res, next) => {
       );
       res.status(200).json(updatedPost);
    } catch (error) {
-      next(eror);
+      next(error);
    }
 };
 
 module.exports = createjournal;
-module.exports = deletepost;
-module.exports = getposts;
-module.exports = updatepost;
+module.exports= deletepost;
+module.exports= getposts;
+module.exports= updatepost;
+

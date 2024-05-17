@@ -9,7 +9,7 @@ const getUsers = require('../controllers/user.controller.js');
 const router = express.Router();
 
 router.post('/createjournal', verifyToken, createjournal);
-router.get('/getposts',getposts);
+router.get('/getposts', getposts);
 router.delete('/deletepost/:postId/:userId', verifyToken, deletepost);
 router.put('/updatepost/:postId/:userId', verifyToken, editpost);
 router.get('/getusers', verifyToken, getUsers);

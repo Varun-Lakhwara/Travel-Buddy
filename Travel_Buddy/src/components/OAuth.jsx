@@ -14,13 +14,13 @@ export default function OAuth() {
     const navigate = useNavigate();
 
     const handleGoogleClick = async () => {
-        const provider = new GoogleAuthProvider()
+        const provider = new GoogleAuthProvider();
         provider.setCustomParameters({ prompt: 'select_account' });
         try {
             const resultFromGoogle = await signInWithPopup(auth, provider);
             const res = await fetch('/api/auth/google',{
                 method:'POST',
-                headers: {'content-type': 'application/json'},
+                headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify(
                     {
                         name : resultFromGoogle.user.displayName,

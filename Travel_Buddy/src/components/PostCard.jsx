@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ShareButton from './ShareButton';
 
 export default function PostCard() {
   return (
@@ -19,6 +20,9 @@ export default function PostCard() {
             hover:text-white transition-all duration-300 text-center py-2 rounded-md !rounded-tl-none !rounded-br-none'>
                 Read post 
             </Link>
+            <div className="">
+              <ShareButton/>
+            </div>
         </div>
 
 

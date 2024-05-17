@@ -25,6 +25,7 @@ export default function DashSideBar() {
       const res = await fetch("/api/user/signout", {
         method: "POST",
       });
+      const data = await res.json(); 
       if (!res.ok) {
         console.log(data.message);
       } else {
@@ -63,7 +64,7 @@ export default function DashSideBar() {
             </Sidebar.Item>
           </Link>
           {currentUser.isAdmin && (
-            <Link to="/dashboard?tab=posts">
+            <Link to='/dashboard?tab=posts'>
               <Sidebar.Item
                 active={tab === "posts"}
                 icon={HiDocumentText}
@@ -76,7 +77,7 @@ export default function DashSideBar() {
 
           {currentUser.isAdmin && (
             <>
-             <Link to="/dashboard?tab=users">
+             <Link to='/dashboard?tab=users'>
               <Sidebar.Item
                 active={tab === "users"}
                 icon={HiOutlineUserGroup}
@@ -85,7 +86,7 @@ export default function DashSideBar() {
                 Users
               </Sidebar.Item>
             </Link>
-            <Link to="/dashboard?tab=comments">
+            <Link to='/dashboard?tab=comments'>
               <Sidebar.Item
                 active={tab === "comments"}
                 icon={HiAnnotation}
